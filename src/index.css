@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Colors */
+  /* Colors - Dark Theme (Default) */
   --bg-main: #060913;
   --bg-gradient: radial-gradient(circle at 50% 0%, #151833 0%, #060913 70%);
   --panel-bg: rgba(13, 20, 38, 0.55);
@@ -30,6 +30,33 @@
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --card-blur: blur(16px);
   --card-radius: 16px;
+}
+
+[data-theme="light"] {
+  /* Colors - Light Theme */
+  --bg-main: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #e2e8f0 0%, #f8fafc 70%);
+  --panel-bg: rgba(255, 255, 255, 0.7);
+  --panel-border: rgba(0, 0, 0, 0.08);
+  --panel-glow: rgba(124, 58, 237, 0.02);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --color-accent-blue: #0284c7;
+  --color-accent-purple: #6d28d9;
+  --color-accent-pink: #db2777;
+  --color-accent-green: #059669;
+  --color-accent-yellow: #d97706;
+  --color-accent-red: #dc2626;
+  
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-purple) 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(109, 40, 217, 0.08) 100%);
+
+  /* Shadow & Blur */
+  --card-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.06);
+  --card-blur: blur(12px);
 }
 
 * {

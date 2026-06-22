@@ -1,0 +1,52 @@
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.toggle-track {
+  width: 52px;
+  height: 28px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .toggle-track {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.12);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toggle-thumb.dark {
+  left: 2px;
+  background: linear-gradient(135deg, #7c3aed, #00d4ff);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}
+
+.toggle-thumb.light {
+  left: 26px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.toggle-thumb svg {
+  width: 13px;
+  height: 13px;
+  color: white;
+}

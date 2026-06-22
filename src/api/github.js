@@ -3,19 +3,32 @@
 
 const BASE_URL = 'https://api.github.com';
 
+function getHeaders() {
+  const headers = {
+    'Accept': 'application/vnd.github.v3+json'
+  };
+  const token = localStorage.getItem('gh_analyser_token');
+  if (token) {
+    headers['Authorization'] = `token ${token}`;
+  }
+  return headers;
+}
+
 /**
  * Fetch profile data for a user
  * @param {string} username 
  * @returns {Promise<Object>}
  */
 export async function fetchUserProfile(username) {
-  const response = await fetch(`${BASE_URL}/users/${username}`);
+  const response = await fetch(`${BASE_URL}/users/${username}`, {
+    headers: getHeaders()
+  });
   if (!response.ok) {
     if (response.status === 404) {
       throw new Error('User not found');
     }
     if (response.status === 403) {
-      throw new Error('GitHub API rate limit exceeded. Please try again later.');
+      throw new Error('GitHub API rate limit exceeded or credentials invalid. Please check your token or try again later.');
     }
     throw new Error('Failed to fetch user profile');
   }
@@ -28,10 +41,12 @@ export async function fetchUserProfile(username) {
  * @returns {Promise<Array>}
  */
 export async function fetchUserRepos(username) {
-  const response = await fetch(`${BASE_URL}/users/${username}/repos?per_page=100&sort=updated`);
+  const response = await fetch(`${BASE_URL}/users/${username}/repos?per_page=100&sort=updated`, {
+    headers: getHeaders()
+  });
   if (!response.ok) {
     if (response.status === 403) {
-      throw new Error('GitHub API rate limit exceeded. Please try again later.');
+      throw new Error('GitHub API rate limit exceeded or credentials invalid. Please check your token or try again later.');
     }
     throw new Error('Failed to fetch user repositories');
   }
@@ -44,10 +59,12 @@ export async function fetchUserRepos(username) {
  * @returns {Promise<Array>}
  */
 export async function fetchUserEvents(username) {
-  const response = await fetch(`${BASE_URL}/users/${username}/events?per_page=100`);
+  const response = await fetch(`${BASE_URL}/users/${username}/events?per_page=100`, {
+    headers: getHeaders()
+  });
   if (!response.ok) {
     if (response.status === 403) {
-      throw new Error('GitHub API rate limit exceeded. Please try again later.');
+      throw new Error('GitHub API rate limit exceeded or credentials invalid. Please check your token or try again later.');
     }
     throw new Error('Failed to fetch user events');
   }

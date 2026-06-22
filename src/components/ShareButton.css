@@ -1,0 +1,12 @@
+.share-wrapper { position: relative; display: inline-flex; }
+.share-trigger-btn { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 8px 16px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.share-trigger-btn svg { width: 16px; height: 16px; }
+.share-trigger-btn:hover { background: rgba(0,212,255,0.08); color: var(--color-accent-blue); border-color: rgba(0,212,255,0.2); }
+.share-backdrop { position: fixed; inset: 0; z-index: 50; }
+.share-menu { position: absolute; top: 100%; right: 0; margin-top: 8px; width: 200px; padding: 8px; z-index: 51; display: flex; flex-direction: column; gap: 2px; }
+.share-menu::before { display: none; }
+.share-option { display: flex; align-items: center; gap: 10px; background: none; border: none; color: var(--text-secondary); padding: 10px 12px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: all 0.15s; text-align: left; width: 100%; }
+.share-option svg { width: 16px; height: 16px; flex-shrink: 0; }
+.share-option:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
+.share-icon { font-size: 16px; width: 16px; text-align: center; }
+.share-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 4px 0; }

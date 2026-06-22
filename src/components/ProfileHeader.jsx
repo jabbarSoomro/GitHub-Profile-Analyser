@@ -1,4 +1,5 @@
 import React from 'react';
+import ShareButton from './ShareButton';
 import './ProfileHeader.css';
 
 export default function ProfileHeader({ profile }) {
@@ -29,7 +30,10 @@ export default function ProfileHeader({ profile }) {
         </div>
 
         <div className="profile-details">
-          <h2 className="profile-name">{profile.name || profile.login}</h2>
+          <div className="profile-name-row">
+            <h2 className="profile-name">{profile.name || profile.login}</h2>
+            <ShareButton profile={profile} />
+          </div>
           <a
             href={profile.html_url}
             target="_blank"
