@@ -10,13 +10,16 @@ export default function ShareButton({ profile }) {
   const shareUrl = window.location.origin + '?user=' + profile.login;
   const shareText = `Check out ${profile.name || profile.login}'s GitHub Profile Analysis — languages, streaks, repo health & more!`;
 
+  const handleTriggerClick = () => {
+    setShowMenu(!showMenu);
+  };
+
   const handleNativeShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({ title: 'GitHub Profile Analysis', text: shareText, url: shareUrl });
+        setShowMenu(false);
       } catch (e) { /* user cancelled */ }
-    } else {
-      setShowMenu(!showMenu);
     }
   };
 
@@ -42,7 +45,7 @@ export default function ShareButton({ profile }) {
 
   return (
     <div className="share-wrapper">
-      <button className="share-trigger-btn" onClick={handleNativeShare} title="Share profile">
+      <button className="share-trigger-btn" onClick={handleTriggerClick} title="Share profile">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         Share
       </button>
@@ -51,6 +54,15 @@ export default function ShareButton({ profile }) {
         <>
           <div className="share-backdrop" onClick={() => setShowMenu(false)}></div>
           <div className="share-menu glass-panel">
+            {navigator.share && (
+              <>
+                <button onClick={handleNativeShare} className="share-option">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                  System Share
+                </button>
+                <div className="share-divider"></div>
+              </>
+            )}
             <button onClick={openTwitter} className="share-option">
               <span className="share-icon twitter">𝕏</span> Twitter / X
             </button>
