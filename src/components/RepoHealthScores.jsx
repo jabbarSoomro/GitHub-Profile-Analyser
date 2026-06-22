@@ -20,11 +20,16 @@ export default function RepoHealthScores({ scoredRepos }) {
   };
 
   return (
-    <div className="repo-health-section animate-fade-in">
-      <h3 className="section-title">Repository Health Scores</h3>
-      <p className="section-subtitle">
-        Scored based on recent activity, stars, complete descriptions, issue ratios, and size.
-      </p>
+    <div className="repo-health-section">
+      <div className="section-header">
+        <div className="section-header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div className="section-header-text">
+          <h3>Repository Health Scores</h3>
+          <p>Top repos scored by activity, stars, descriptions, issues, and size</p>
+        </div>
+      </div>
 
       <div className="repos-grid">
         {topRepos.map((repo) => {

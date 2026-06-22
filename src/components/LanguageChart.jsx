@@ -185,8 +185,11 @@ export default function LanguageChart({ languages }) {
   };
 
   return (
-    <div className="glass-panel language-chart-panel animate-fade-in" ref={containerRef}>
-      <h3 className="panel-title">Top Languages</h3>
+    <div className="glass-panel language-chart-panel" ref={containerRef}>
+      <h3 className="panel-title">
+        <svg className="panel-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Top Languages
+      </h3>
       
       {languages.length === 0 ? (
         <div className="empty-state">No programming languages found.</div>

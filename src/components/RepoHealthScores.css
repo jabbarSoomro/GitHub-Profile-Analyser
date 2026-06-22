@@ -1,22 +1,5 @@
 .repo-health-section {
   width: 100%;
-  margin-top: 24px;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--text-primary);
-  text-align: left;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-  text-align: left;
 }
 
 .repos-grid {

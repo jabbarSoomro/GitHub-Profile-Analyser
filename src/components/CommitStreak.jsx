@@ -7,8 +7,11 @@ export default function CommitStreak({ streakData }) {
   const { currentStreak, longestStreak, totalContributions, activeDaysCount } = streakData;
 
   return (
-    <div className="glass-panel streak-panel animate-fade-in">
-      <h3 className="panel-title">Commit Streak Tracker</h3>
+    <div className="glass-panel streak-panel">
+      <h3 className="panel-title">
+        <svg className="panel-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Commit Streaks
+      </h3>
 
       <div className="streak-layout">
         {/* Current Streak Indicator */}
