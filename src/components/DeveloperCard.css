@@ -1,0 +1,264 @@
+.dev-card-section {
+  width: 100%;
+}
+
+.dev-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card styled for exporting (strictly 600x340px) */
+.dev-card-exportable {
+  width: 600px;
+  height: 340px;
+  position: relative;
+  background: #090e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+              0 0 30px rgba(124, 58, 237, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Cyber mesh glowing bubbles in the card */
+.card-mesh {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mesh-1 {
+  width: 180px;
+  height: 180px;
+  background: rgba(0, 212, 255, 0.15);
+  top: -40px;
+  right: -20px;
+}
+
+.mesh-2 {
+  width: 220px;
+  height: 220px;
+  background: rgba(124, 58, 237, 0.15);
+  bottom: -60px;
+  left: -20px;
+}
+
+/* Content layer */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.card-avatar-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.card-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  object-fit: cover;
+}
+
+.card-avatar-ring {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  opacity: 0.5;
+}
+
+.card-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.card-username {
+  font-size: 0.9rem;
+  color: var(--color-accent-blue);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.card-bio {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 6px;
+  line-height: 1.4;
+  max-width: 440px;
+}
+
+/* Stacks section */
+.card-languages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-section-lbl {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.card-lang-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-lang-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Card footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 15px;
+}
+
+.card-metrics {
+  display: flex;
+  gap: 24px;
+}
+
+.card-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.metric-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+
+.metric-lbl {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.card-badge {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.badge-text {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+}
+
+/* Controls */
+.card-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.export-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.export-btn:hover {
+  background: var(--gradient-accent);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.export-error {
+  font-size: 0.8rem;
+  color: var(--color-accent-yellow);
+}
+
+/* Scale card down on narrow viewports for display, but it remains 600px when exporting */
+@media (max-width: 650px) {
+  .dev-card-exportable {
+    transform: scale(0.8);
+    transform-origin: center center;
+    margin: -30px 0; /* Negate the whitespace around scaling */
+  }
+}
+
+@media (max-width: 500px) {
+  .dev-card-exportable {
+    transform: scale(0.6);
+    margin: -60px 0;
+  }
+}

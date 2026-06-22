@@ -1,0 +1,155 @@
+.app-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Dashboard structures */
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.dashboard-row {
+  width: 100%;
+}
+
+.dashboard-row.row-flex {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.col-header {
+  flex: 1.25;
+}
+
+.col-card {
+  flex: 1;
+}
+
+.dashboard-row.row-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.dashboard-full-width {
+  width: 100%;
+}
+
+/* Error Banner */
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  padding: 16px 24px;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 24px;
+  color: #fca5a5;
+  box-sizing: border-box;
+}
+
+.error-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-accent-red);
+}
+
+.error-message {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Footer layout */
+.app-footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-footer p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-author-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-author-link:hover {
+  color: var(--color-accent-blue);
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-blue);
+}
+
+.bullet {
+  color: var(--text-muted);
+}
+
+/* Skeletons row height alignment */
+.skeleton-row {
+  margin-bottom: 24px;
+}
+
+/* Breakpoints */
+@media (max-width: 960px) {
+  .dashboard-row.row-flex {
+    flex-direction: column;
+  }
+  .col-header, .col-card {
+    width: 100%;
+    flex: none;
+  }
+  .dashboard-row.row-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 20px 12px;
+  }
+  .app-footer {
+    margin-top: 50px;
+  }
+}
